@@ -1,0 +1,129 @@
+title{
+    color: red;
+}
+section {
+    text-align: center;
+}
+header{
+    color: blue;
+    text-align: center;
+}
+/* Nosotros */
+#nosotros {
+    padding: 60px 20px;
+    background-color: #ffe0b2;
+}
+
+/* Contacto */
+#contacto {
+    padding: 60px 20px;
+    background-color: #d1c4e9;
+}
+#servicios {
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; 
+}
+/* Carrusel al 100% */
+.carrusel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Las slides ocupan todo */
+.slides {
+    width: 300%;   /* 3 imágenes */
+    height: 100%;  /* altura completa */
+    display: flex;
+    animation: slide 12s infinite;
+}
+
+/* Las imágenes ocupan TODA la sección */
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+@keyframes slide {
+    0%   { margin-left: 0; }
+    33%  { margin-left: 0; }
+
+    33.1% { margin-left: -100%; }
+    66%   { margin-left: -100%; }
+
+    66.1% { margin-left: -200%; }
+    100%  { margin-left: -200%; }
+}
+.carrusel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Ajusta opacidad */
+    z-index: 1;
+}
+
+/* Aseguramos que el texto quede ENCIMA del overlay */
+.texto-carrusel {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 0 10px black;
+    text-align: center;
+}
+
+.texto-carrusel h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.texto-carrusel p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+}
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: none;
+    display: inline-block;
+    background-color: rgb(0, 204, 255);
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    text-shadow: none;
+}
+
+.texto-carrusel button:hover {
+    background-color: blue;
+    color: white;
+}
+nav {
+  background: #00d5ff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}  
+a{
+    color: black;
+    
+}
+

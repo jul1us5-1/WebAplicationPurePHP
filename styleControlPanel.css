@@ -1,0 +1,244 @@
+/* Evitar que el padding/margin haga que se pase del 100% */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+body{
+    background-color: #f4f7f9;
+}
+/* Barra de navegación */
+.navbar {
+    width: 100%;
+    max-width: 100%;          /* nunca excede el ancho de la ventana */
+    background-color: #1a2a6c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;       /* ajusta un poco el padding */
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    overflow-x: auto;         /* si algo rebalsa, permite scroll horizontal */
+}
+.navbar.guest-mode {
+    background-color: rgb(4, 113, 4); /* Verde bonito */
+}
+/* Lista de items */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;               /* reducir un poco espacio entre items */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;          /* hace que baje si no cabe */
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    padding: 6px 10px;        /* reducir padding interno */
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+.welcome{
+    color: white;
+}
+#salir:hover{
+    color: white;
+    background-color: red;
+}
+.nav-menu li a:hover {
+    color: white;
+    background-color: #0099ff;
+}
+.nav-left{
+    display:flex;
+    gap: 40px;
+}
+.main-feed {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.create-post-container {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.user-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.post-form {
+    flex: 1;
+}
+
+.post-form textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    outline: none;
+    font-family: inherit;
+    min-height: 60px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+/* --- Área de Acciones (Icono y Botón) --- */
+.post-actions {
+    display: flex;
+    justify-content: space-between; /* Empuja el botón a la derecha */
+    align-items: center;
+    padding-top: 5px;
+}
+
+/* Estilo unificado para el botón de subir foto */
+.label-foto {
+    cursor: pointer;
+    color: #45bd62; /* Verde Facebook */
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    user-select: none; /* Evita que se seleccione el texto al hacer clic */
+}
+
+.label-foto:hover {
+    background-color: #f2f2f2;
+}
+
+.label-foto i {
+    font-size: 20px; /* Tamaño del icono de imagen */
+}
+
+.label-foto span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #65676b;
+}
+
+/* El botón de publicar */
+.btn-post {
+    background-color: #1a2a6c;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-post:hover {
+    background-color: #0099ff;
+}
+
+.post-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.avatar-mini {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #1c1e21;
+}
+
+.post-date {
+    font-size: 0.8rem;
+    color: #65676b;
+}
+
+.post-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1c1e21;
+    margin-bottom: 10px;
+}
+
+.post-img-container img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.post-footer {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-interact {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 8px;
+    color: #65676b;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-interact:hover {
+    background-color: #f2f2f2;
+}
+
+.no-posts {
+    text-align: center;
+    padding: 50px;
+    color: white; /* Resalta sobre tu fondo azul */
+}
+
+.no-posts i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.upload_image:hover{
+    background-color:#0099ff;
+}
+.btn-upload:hover{
+    background-color: #0099ff;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+}
+.no-posts{
+    color: black;
+}

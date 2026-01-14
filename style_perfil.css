@@ -1,0 +1,242 @@
+/* Configuraciones básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+/* Cabecera / Navbar */
+.cabecera {
+    background-color: #1a2a6c;
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cabecera nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+.btn-logout {
+    background-color: #e53e3e;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c53030;
+}
+
+/* Contenedor Principal */
+.contenedor-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tarjeta-perfil {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* Sección del Avatar */
+.avatar-seccion {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.avatar-circulo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1a2a6c, #0099ff); /* Toque moderno al avatar */   
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.rol {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* Sección de Datos */
+.info-seccion {
+    padding: 20px 0;
+}
+
+.info-seccion h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #1a2a6c;
+}
+
+.dato {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dato label {
+    font-weight: bold;
+    color: #555;
+}
+
+.tag-activo {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Acciones */
+.btn-editar {
+    width: 100%;
+    padding: 12px;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #ddd;
+}
+
+.post-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.avatar-mini {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #1c1e21;
+}
+
+.post-date {
+    font-size: 0.8rem;
+    color: #65676b;
+}
+
+.post-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1c1e21;
+    margin-bottom: 10px;
+}
+
+.post-img-container img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.post-footer {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-interact {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 8px;
+    color: #65676b;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-interact:hover {
+    background-color: #f2f2f2;
+}
+
+.no-posts {
+    text-align: center;
+    padding: 50px;
+    color: white; /* Resalta sobre tu fondo azul */
+}
+
+.no-posts i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+/* Contenedor de publicaciones en el perfil */
+.muro-usuario {
+    width: 100%;
+    max-width: 500px; /* Igual que tu tarjeta-perfil */
+    margin-top: 20px; /* Espacio entre la tarjeta y los posts */
+}
+
+/* Ajuste de la tarjeta de post individual */
+.post-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+/* Ajuste de imágenes para que no se deformen */
+.post-img-container img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+.no-posts{
+    color: black;
+}
