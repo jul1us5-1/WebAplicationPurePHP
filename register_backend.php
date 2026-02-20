@@ -70,7 +70,9 @@ try{
     $mailSender->isSMTP();
     $mailSender->Host = 'smtp.gmail.com';
     $mailSender->SMTPAuth = true;
-    $mailSender->Username = 'usuario3@ejemplo.com'; // the mail we are going to use
+
+    //YOU WILL HAVE TO ADD YOUR OWN EMAIL AND APPLICATION PASSWORD
+    $mailSender->Username = 'no_reply@site.com'; // the mail we are going to use
     $mailSender->Password = 'xxxx xxxx xxxx xxxx';       // aplication password
     $mailSender->SMTPSecure = 'tls';
     $mailSender->Port = 587;
