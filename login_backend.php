@@ -1,15 +1,6 @@
     <?php
     session_start();
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "servissana_db";
-
-    $conn = mysqli_connect($server,$username,$password,$database);
-
-    if(!$conn){
-        die("Conexion fallida: " . mysqli_connect_error());
-    }
+    require_once __DIR__ . '/db.php';
 
     $usser_mail = mysqli_real_escape_string($conn,$_POST['user-mail']);
     $password = $_POST['password'];

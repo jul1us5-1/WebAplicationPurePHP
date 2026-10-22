@@ -1,0 +1,8 @@
+# Bloquea el acceso web a archivos sensibles (Apache / XAMPP)
+Options -Indexes
+
+<FilesMatch "^\.(env|git|htaccess)|\.(sql|lock|md|example)$|^composer\.json$|^config\.php$|^db\.php$|^funciones\.php$">
+    Require all denied
+</FilesMatch>
+
+RedirectMatch 403 ^/?(.*/)?(\.git|vendor|db)(/|$)

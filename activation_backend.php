@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "servissana_db";
-
-$conn = mysqli_connect($server, $username, $password, $database);
-
-if (!$conn) {
-    die("Error de conexión: " . mysqli_connect_error());
-}
+require_once __DIR__ . '/db.php';
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $activation_code = mysqli_real_escape_string($conn, $_POST['activation_code']);

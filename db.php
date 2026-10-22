@@ -1,8 +1,10 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "servissana_db";
+require_once __DIR__ . '/config.php';
+
+$server   = env('DB_HOST', 'localhost');
+$username = env('DB_USER', 'root');
+$password = env('DB_PASS', '');
+$database = env('DB_NAME', 'servissana_db');
 
 // Establecer la conexión
 $conn = mysqli_connect($server, $username, $password, $database);

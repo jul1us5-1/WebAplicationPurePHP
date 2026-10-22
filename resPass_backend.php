@@ -7,17 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 
 //CONEXION AL SERVER
 
-$server = "localhost";
-$username = "root";
-$password  = "";
-$database = "servissana_db";
-
-
-$conn = mysqli_connect($server,$username,$password,$database);
-
-if(!$conn){
-    die("Conexion fallida: " . mysqli_connect_error());
-}
+require_once __DIR__ . '/db.php';
 
 $emailUser = mysqli_real_escape_string($conn,$_POST['email_usser']);
 
@@ -51,14 +41,14 @@ if(!$result2){
 $mailSender = new PHPMailer(true);
 try{
     $mailSender->isSMTP();
-    $mailSender->Host = 'smtp.gmail.com';
+    $mailSender->Host = env('SMTP_HOST', 'smtp.gmail.com');
     $mailSender->SMTPAuth = true;
-    $mailSender->Username = 'usuario3@ejemplo.com'; // the mail we are going to use
-    $mailSender->Password = 'xxxx xxxx xxxx xxxx';       // aplication password
+    $mailSender->Username = env('SMTP_USER');  // configurado en .env
+    $mailSender->Password = env('SMTP_PASS');  // contraseña de aplicación, en .env
     $mailSender->SMTPSecure = 'tls';
-    $mailSender->Port = 587;
+    $mailSender->Port = (int) env('SMTP_PORT', 587);
 
-    $mailSender->setFrom('tuCorreo@gmail.com', 'Registro');
+    $mailSender->setFrom(env('MAIL_FROM', env('SMTP_USER')), env('MAIL_FROM_NAME', 'Registro'));
     $mailSender->addAddress($emailUser);
 
     $mailSender->isHTML(true);

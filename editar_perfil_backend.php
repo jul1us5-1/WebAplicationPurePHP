@@ -29,7 +29,8 @@ if (!checkdnsrr($domain, 'MX')) {
 }
 
 // VERIFICAR reCAPTCHA
-$secret = "TU_RECAPTCHA_SECRET";
+require_once __DIR__ . '/config.php';
+$secret = env('RECAPTCHA_SECRET');
 $response = $_POST['g-recaptcha-response'];
 $remoteip = $_SERVER['REMOTE_ADDR'];
 

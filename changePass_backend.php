@@ -2,16 +2,7 @@
 session_start();
 //CONEXION AL SERVER
 
-$server = "localhost";
-$username = "root";
-$password  = "";
-$database = "servissana_db";
-
-$conn = mysqli_connect($server,$username,$password,$database);
-
-if(!$conn){
-    die("Conexion fallida: " . mysqli_connect_error());
-}
+require_once __DIR__ . '/db.php';
 //Verificamos si esq esta el email
 
 if(!isset($_POST['email'])){
@@ -22,7 +13,8 @@ if(!isset($_POST['email'])){
 //------------------
 // 1. VERIFICAR reCAPTCHA
 //------------------
-$secret = "TU_RECAPTCHA_SECRET";
+require_once __DIR__ . '/config.php';
+$secret = env('RECAPTCHA_SECRET');
 $response = $_POST['g-recaptcha-response'];
 $remoteip = $_SERVER['REMOTE_ADDR'];
 

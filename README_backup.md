@@ -63,17 +63,10 @@ Password: (leave empty for default XAMPP)
 Database: servissana_db
 
 📧 Email Configuration (PHPMailer)
-Para que el sistema pueda enviar correos electrónicos (como confirmaciones de registro), debes configurar tus credenciales en el archivo register_backend.php.
+Todas las credenciales (base de datos, reCAPTCHA y correo) se leen desde un archivo `.env` que NO se sube al repositorio.
 
-Abre register_backend.php.
-
-Busca la sección de configuración de PHPMailer.
-
-Reemplaza los siguientes valores con tu información:
-
-$mail->Username = 'tu-correo@gmail.com';
-
-$mail->Password = 'tu-contraseña-de-aplicación';
+1. Copia `.env.example` y renómbralo a `.env`.
+2. Rellena `DB_*`, `RECAPTCHA_SECRET`, `SMTP_USER`, `SMTP_PASS` y `MAIL_FROM` con tus propios datos.
 
 [!IMPORTANT]
 No uses tu contraseña normal. Si usas Gmail, debes generar una "Contraseña de Aplicación" desde la configuración de seguridad de tu cuenta de Google (requiere tener activa la verificación en dos pasos).
